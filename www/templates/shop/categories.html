@@ -1,0 +1,37 @@
+<ion-view style="" class="" id="page5" title="Outlets, Malls, Stores, Items">
+   <ion-content id="categories-content" ng-init="loadoo()" padding="true" style="background: #e9ecee">
+     <ion-refresher
+        pulling-text="Pull to refresh..."
+        on-refresh="doRefresh()">
+      </ion-refresher>
+        <!--list section-->
+        <div class="categories-list animated fadeInUpBig">
+            <!--location item section-->
+            <a ui-sref="recipeView({pid: item.$id})" nav-direction="enter">
+            <div class="categories-item" ng-repeat="item in menu">
+
+                <div class="categories-img" style="background-image:url('{{item.image}}');background-size: cover !important;">
+
+                </div></a>
+                <div class="categories-content row">
+                    <div class="col-80">
+
+                        <h1>
+                            {{item.name}}
+                        </h1>
+
+                        <p>
+                            <i class="fa fa-clock-o"></i> {{item.shippingtime}}
+                        </p>
+                    </div>
+                    <div class="col-20">
+                        <h1>₱{{item.price}}</h1>
+
+                    </div>
+                </div>
+
+            </div><!--end location item section-->
+       </div>
+       <div class="" style="height:40px;background: #e9ecee"></div>
+    </ion-content>
+</ion-view>

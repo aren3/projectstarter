@@ -1,0 +1,141 @@
+<ion-view style="" id="page8" title="My Profile">
+
+    <ion-content class="has-header" style="background: #e9ecee" overflow-scroll="true" data-tap-disabled="true">
+
+
+    <!-- Pull to refresh -->
+      <ion-refresher
+         pulling-text="Pull to refresh..."
+         on-refresh="doRefresh()">
+       </ion-refresher>
+       <!-- MODAL BOX -->
+
+             <!-- The Modal -->
+                <div id="walletadModal" class="modal">
+            <center>
+             <!-- Modal content -->
+             <div class="modal-content">
+             <div class="modal-header">
+             <div class="close">&times;</div>
+                <h5 style="color:#fff;">Wallet Address</h5>
+             </div>
+             <div class="list modal-body">
+               <br />
+               <h4>{{user_extras.walletid}}</h4>
+               <br /><br /><br />
+               <p>Click outside(dark color)to exit or click X</p>
+             </div>
+             </div>
+             </div>
+           </center>
+       <!-- end of modal box  -->
+
+
+         <div class="list" style="padding-right:5px;padding-left:5px;padding-top:5px;padding-bottom:5px;background:#e9ecee">
+              <ion-item class="profile-item card">
+                <div style="height:180px">
+                 <img class="img-circle avatar left pic-settings" style="height:150px;width:150px"  ng-cache ng-src="http://graph.facebook.com/{{user.id}}/picture?width=800">
+                 </div>
+                <center>
+                  <h3 style="color:#5b2f8d; font-size:25px;">
+                   Welcome {{user_info.displayName}}
+                 </h3>
+               </center>
+
+              <ion-item>
+
+                  <div style="min-height: 30px;" class="item">
+                      <a class="icon ion-card" style="color:#5c2f8d;font-size:25px;">
+                      Wallet: ₱  {{user_extras.wallet}}</a>
+                  </div>
+                  <div style="min-height: 30px;" class="item">
+                      <a class="icon icon-coin-dollar" style="color:#5c2f8d;font-size:25px;">
+                      Points:  {{user_extras.points}} pts</a>
+                  </div>
+                  <label class="item ic-selected">
+                    <h3 style="color:#5c2f8d;">Click to show Wallet Address</h3>
+                    <a id="walletadBtn" class="icon icon-qrcode" style="color:#5c2f8d;font-size:25px;"></a>
+                    </label>
+
+                <label class="item item-input ic-selected">
+                  <a class="icon ion-ios-telephone-outline" style="margin-right: 10px; color:#5d2f8d; font-size:25px;"></a>
+                  <input style="color: #000;" ng-model="user_extras.telephone" type="text" placeholder="Telephone" >
+                </label>
+                <label class="item item-input ic-selected">
+                  <a class="icon ion-ios-email-outline" style="margin-right: 10px;color:#5d2f8d;font-size:25px;"></a>
+                  <input style="color: #000;" ng-model="data_editable.email" type="email"  placeholder="Email">
+                </label>
+                <label class="item item-input ic-selected">
+                  <a class="fa fa-key" style="margin-right: 10px;color:#5d2f8d;font-size:25px;"></a>
+                  <input style="color: #000;" ng-model="data_editable.password" type="password" placeholder="Update Password">
+                </label>
+              </ion-item>
+              </ion-item>
+            </div>
+          </div>
+       <div class="" style="height:10px;background: #e9ecee"></div>
+     </div>
+
+      <form name="settingForm" id="settings-form">
+
+        <ion-list>
+     <div class="" style="height:0px;background: #e9ecee"></div>
+          <!--Address Header-->
+
+          <label ng-click="addManipulation()" class="item item-input item ic-selected" style="padding-right:10px;padding-left:10px;padding-top:20px;">
+            <a class="icon ion-ios-location-outline" style="margin-right: 10px;color:#5d2f8d;font-size:25px;" ></a>
+            Address
+            <i  class="icon icon-right ion-android-add-circle" style="font-size:larger;margin-left: 10px;color:#5d2f8d;"></i>
+          </label>
+     <div class="" style="padding-right:10px;padding-left:10px;padding-top:10px;background:#e9ecee"></div>
+       <label> <a class="icon icon-right ion-information-circled" style="margin-right: 10px;color:#5d2f8d;font-size:15px;"> Reminder:</a><p style="padding-left:20px;font-size:12px">
+       1st is your address, <br />2nd is your recipients address
+         <br />Make sure to fill in complete name and middle name</p></label>
+        <div ng-repeat="item in addresses">
+          <div class="list card">
+            <div style="min-height: 50px; padding-top: 10px; padding-bottom: 50px;" class="item item-divider">
+                <a class="icon ion-ios-location-outline" style="color:#5d2f8d;font-size:25px;"></a>
+                {{item.nickname}}
+                <div style="float: right;">
+                  <a ng-click="addManipulation(item)" class="icon icon-right ion-edit" style="font-size: 20px;color:#5d2f8d;"></a>
+                  <a ng-click="deleteAddress(item.$id)" class="icon icon-right ion-android-delete" style="font-size: 20px;color:#5d2f8d;"></a>
+                </div>
+            </div>
+            <div class="item item-body" class="list card">
+              <span> {{item.address}} </span>
+              <span>Email: {{item.pin}}</span>
+              <span>Tel: {{item.phone}}</span>
+            </div>
+          </div>
+        </div>
+<div class="" style="height:30px;background: #e9ecee"></div>
+        <a style="" ng-click="cancel()" class="button icon-left ion-ios-close-outline button-light waves-effect">Cancel</a>
+        <a style="" ng-click="save(user_extras,data_editable)"  class="button button icon-left ion-ios-checkmark button-calm waves-effect">Save</a>
+<div class="" style="height:100px;background: #e9ecee"></div>
+</ion-list>
+</form>
+    </ion-content>
+
+    <!-- FOOTER -->
+    <div class="bar bar-footer" style="height:50px;">
+      <div class="tabs tabs-icon-top" style="height:60px;">
+        <a class="tab-item" style="height:60px;" ui-sref="menu">
+          <i class="icon waves-effect icon-home"  style="font-size:35px;font-weight:700;color:#5d2f8d;"></i>
+          <i class="waves-effect" style="font-size:15px;font-weight:700;color:#5d2f8d;">Home</i>
+        </a>
+        <a class="tab-item" style="height:60px;" ui-sref="shop">
+          <i class="icon waves-effect icon-shop" style="font-size:35px;font-weight:700;color:#5d2f8d;"></i>
+          <i class="waves-effect" style="font-size:15px;font-weight:700;color:#5d2f8d;">Balikbayan</i>
+        </a>
+        <a class="tab-item" style="height:60px;" ui-sref="helpdesk">
+          <i class="icon waves-effect icon-comment-discussion" style="font-size:35px;font-weight:700;color:#5d2f8d;"></i>
+          <i class="waves-effect" style="font-size:15px;font-weight:700;color:#5d2f8d;">HelpDesk</i>
+        </a>
+        <a class="tab-item active" style="height:60px;" ui-sref="settings">
+          <i class="icon waves-effect ion-ios-contact" style="font-size:35px;font-weight:700;color:#5d2f8d;"></i>
+          <i class="waves-effect" style="font-size:15px;font-weight:700;color:#5d2f8d;">My Account</i>
+        </a>
+      </div>
+    </div>
+
+</ion-view>

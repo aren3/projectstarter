@@ -1,0 +1,136 @@
+<ion-view style="has-header" class="categories-view" id="page3" title="Home">
+  <ion-nav-buttons side="right">
+    <!-- #3.  $root.extras -->
+    <!-- #4.  get_total() -->
+    <button ui-sref="about" style="font-size:40px;" ng-if="$root.extras" class="waves-effect button button-clear ion-android-more-vertical"></button>
+  </ion-nav-buttons>
+
+<!-- CONTENT -->
+
+    <ion-content scroll="true" has-bouncing="true">
+
+      <!-- Pull to refresh -->
+            <ion-refresher
+               pulling-text="Pull to refresh..."
+               on-refresh="doRefresh()">
+             </ion-refresher>
+
+<!--  Header  Image and money-->
+      <div style="height:300px;padding-top: 10px;background:url(img/bg1.jpg);background-size: cover;">
+
+
+                <span >
+                  <div style="height:100px;">
+                <center>   <img class="img-circle avatar" style="height:100px;width:100px;position: absolute; left: 40%;" ng-cache ng-src="http://graph.facebook.com/{{user.id}}/picture?width=800">    </center>
+                   </div>
+                </span>
+                <br /><br /> <center> <font color="#FFF;">{{user_info.displayName}}'s Balance</font>     </center>
+            <br/>
+            <br/>
+              <center>  <span class="icon ion-card" style="color:#FFF;font-size:40px;">
+                     ₱ {{user_extras.wallet}}</span>
+                 <i ng-controller="PopupCtrl" ng-click="showAlert()" class="icon ion-ios-bolt pull-right waves-effect" style="color:#e9ecee;font-size:40px;padding-left:0px;padding-right:0px"></i></center>
+
+
+
+            <br/><br/>
+              <center>  <span class="icon icon-coin-dollar" style="color:#FFF;font-size:30px;">
+                  {{user_extras.points}} pts</span>
+                <i ng-controller="PopupCtrl" ng-click="showAlert2()" class="icon icon-sync pull-right waves-effect" style="color:#e9ecee;font-size:30px;"></i></center>
+
+
+
+     <div style="height:10px"></div>
+<!--  Start of the Body Buttons-->
+      <div class="row" style="padding-left:5px;padding-right:5px;height:60px">
+          <div class="col waves-effect icon-paperplane button-large royal card" style="color:#5d2f8d;font-size:40px;" ui-sref="sendMoney"><h6 style="font-weight:bold;">Remit</h6></div>
+          <div class="col waves-effect icon-plug button-large royal card" style="color:#5d2f8d;font-size:40px;" ui-sref="billPay"><h6 style="font-weight:bold;">Bills Payment</h6></div>
+      </div>
+
+      <div class="row" style="padding-left:5px;padding-right:5px;height:60px">
+          <div class="material-icons col waves-effect icon-office button-large royal card" style="color:#5d2f8d;font-size:40px;" ui-sref="contribution"><h6 style="font-weight:bold;">Gov't Benefits</h6></div>
+          <div class="col waves-effect icon-sim_card button-large royal card" style="color:#5d2f8d;font-size:40px;" ui-sref="topup"><h6 style="font-weight:bold;">Load Padala</h6></div>
+      </div>
+
+      <div class="row" style="padding-bottom:5px;padding-left:5px;padding-right:5px;height:60px">
+          <div class="col waves-effect ion-arrow-swap button-large royal card" style="color:#5d2f8d;font-size:40px;" ui-sref="exchange"><h6 style="font-weight:bold;">Exchange Rate</h6></div>
+          <div class="col waves-effect icon-profile button-large royal card" style="color:#5d2f8d;font-size:50px;" ui-sref="settings"><h6 style="font-weight:bold;">Limits/Verification Status</h6></div>
+      </div>
+
+<div class="card" style="background-color:#d1f3f6;width:350px;height:180px;">
+    <ion-slide-box show-pager="true" style="padding-right:5px;padding-left:5px;width:350px;height:160px;" does-continue="false" on-slide-changed="slideHasChanged($index)">
+        <ion-slide class="waves-effect">
+            <img class="card" style="width:335px;height:150px;"
+               ui-sref="6" src="http://res.cloudinary.com/app-ofwremit/image/upload/v1504034949/slidebox/6.png">
+        </ion-slide>
+        <ion-slide class="waves-effect">
+            <img class="card" style="width:335px;height:150px;"
+                ui-sref="7" src="http://res.cloudinary.com/app-ofwremit/image/upload/v1504034949/slidebox/7.png">
+        </ion-slide>
+        <ion-slide class="waves-effect">
+            <img class="card" style="width:335px;height:150px;"
+               ui-sref="3" src="http://res.cloudinary.com/app-ofwremit/image/upload/v1504034949/slidebox/3.png">
+        </ion-slide>
+        <ion-slide class="waves-effect">
+            <img class="card" style="width:335px;height:150px;"
+                ui-sref="4" src="http://res.cloudinary.com/app-ofwremit/image/upload/v1504034949/slidebox/4.png">
+        </ion-slide>
+        <ion-slide class="waves-effect">
+            <img class="card" style="width:335px;height:150px;"
+               ui-sref="5" src="http://res.cloudinary.com/app-ofwremit/image/upload/v1504034949/slidebox/5.png">
+        </ion-slide>
+
+    </ion-slide-box>
+     <p style="padding-bottom:0px;padding-left:80px;font-weight:700;font-size:12px;color:#717e82;">Click each slide to show more info<p>
+</div>
+
+   <div class="" style="height:20px;background: #e9ecee"></div>
+<!--  Start of the Referral Card info-->
+              <div class="card">
+              <div class="item item-body">
+                Referral Points
+                <p>
+                    Referral Signup= 200pts,<br />
+                    When they verify = 300pts.<br />
+                    Points are convertible to cash and load or buy grocery coupon.
+                    Only by sharing this app to your friends.
+                </p>
+                <p>
+                  <button class="btn-floating waves-effect ion-social-twitter-outline button button-green" style="font-size:40px;font-weight;700;color:#fff;" onclick="window.plugins.socialsharing.shareViaTwitter('Libreng 500Pts covertible to load and cash, Share lng ng share', null /* img */, 'https://play.google.com/store/apps/details?id=com.ofw.remit.ph')"></button>
+                  <button class="btn-floating waves-effect ion-social-facebook-outline button button-positive" style="font-size:40px;font-weight;700;color:#fff;" onclick="window.plugins.socialsharing.shareViaFacebook('Libreng 500Pts covertible to load and cash, Share lng ng share', null /* img */, 'https://play.google.com/store/apps/details?id=com.ofw.remit.ph', function() {console.log('share ok')}, function(errormsg){alert(errormsg)})"></button>
+                  <button class="btn-floating waves-effect ion-social-instagram-outline button button-assertive" style="font-size:40px;font-weight;700;color:#fff;" onclick="window.plugins.socialsharing.shareViaInstagram('Libreng 500Pts covertible to load and cash, Share lng ng share', null /* img */, 'https://play.google.com/store/apps/details?id=com.ofw.remit.ph', function() {console.log('share ok')}, function(errormsg){alert(errormsg)})"></button>
+                  <button class="btn-floating waves-effect ion-social-whatsapp-outline button button-balanced" style="font-size:40px;font-weight;700;color:#fff;" onclick="window.plugins.socialsharing.shareViaWhatsApp('Libreng 500Pts covertible to load and cash, Share lng ng share', null /* img */, 'https://play.google.com/store/apps/details?id=com.ofw.remit.ph', function() {console.log('share ok')}, function(errormsg){alert(errormsg)})"></button>
+                  <button class="btn-floating waves-effect button ion-share" style="font-size:40px;font-weight;700;color:#fff;" ng-click="share()"> <p style="color:#fff;">Share</p></button>
+                </p>
+              </div>
+            </div>
+
+
+     <div class="" style="height:100px;background: #e9ecee"></div>
+        </div>
+
+
+
+	</ion-content>
+  <!-- FOOTER -->
+  <div class="bar bar-footer no-border" style="height:50px;">
+    <div class="tabs tabs-icon-top no-border" style="height:60px;">
+      <a class="tab-item active" style="height:60px;" ui-sref="menu">
+        <i class="icon waves-effect icon-home"  style="font-size:35px;font-weight:700;color:#5d2f8d;"></i>
+        <i class="waves-effect" style="font-size:15px;font-weight:700;color:#5d2f8d;">Home</i>
+      </a>
+      <a class="tab-item" style="height:60px;" ui-sref="shop">
+        <i class="icon waves-effect icon-shop" style="font-size:35px;font-weight:700;color:#5d2f8d;"></i>
+        <i class="waves-effect" style="font-size:15px;font-weight:700;color:#5d2f8d;">Balikbayan</i>
+      </a>
+      <a class="tab-item" style="height:60px;" ui-sref="helpdesk">
+        <i class="icon waves-effect icon-comment-discussion" style="font-size:35px;font-weight:700;color:#5d2f8d;"></i>
+        <i class="waves-effect" style="font-size:15px;font-weight:700;color:#5d2f8d;">HelpDesk</i>
+      </a>
+      <a class="tab-item" style="height:60px;" ui-sref="settings">
+        <i class="icon waves-effect ion-ios-contact" style="font-size:35px;font-weight:700;color:#5d2f8d;"></i>
+        <i class="waves-effect" style="font-size:15px;font-weight:700;color:#5d2f8d;">My Account</i>
+      </a>
+    </div>
+  </div>
+</ion-view>

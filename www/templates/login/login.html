@@ -1,0 +1,86 @@
+<ion-view style="" class=" " id="page1" title="Login">
+    <ion-content class="has-header" style="background: url(img/bg1.jpg); background-size: cover;">
+
+
+		<form name="loginForm" class="list " id="login-form1" style="margin-top:30px;">
+            <ion-list id="login-list2">
+
+                <div class="app-icon"></div>
+
+                <div class="item item-input item-floating-label">
+                    <span class="input-label">Email</span>
+                    <input ng-model="user.email" style="color: white;" type="email" placeholder="Email">
+                    <span class="input-label" style="color: #9F9F9F;" >Password</span>
+                    <input ng-model="user.password" style="color: white;" type="password" placeholder="Password">
+
+               </div>
+            </ion-list>
+
+            <div style="height: 10px;" class="spacer"></div>
+            <button ng-click="loginEmail(loginForm,user)" class="waves-effect card button ion-ios-email-outline"  style="color: #50a59c;" id="signup-button3" ng-disabled="loginForm.$invalid">
+            <i style="color:calm;font-weight:bold;font-size:15px">LOGIN NOW</i>
+            </button>
+        </form>
+
+           <div style="height: 20px;" class="spacer"></div>
+            <center> <button ng-click="fbLogin()" class="icon waves-effect card button button-positive">
+            continue with facebook
+            </button>
+            <div style="height: 20px;" class="spacer"></div>
+            <i style="color:white;font-weight:bold;font-size:15px">No Account yet?</i>
+            <span class="waves-effect card button icon ion-arrow-right-c" ui-sref="signup">
+            </span>
+             </center>
+
+
+             <!-- 	<div class="row no-padding" style="padding-left:39px;padding-right:39px">
+             		<button class="button button-block facebook-login box-shadow" ng-click="loginFacebook()">
+             			<div class="row row-no-padding">
+             				<div class="col-10 ion-social-facebook">
+             				</div>
+             				<div class="col-90">
+             					LOGIN WITH <b>FACEBOOK</b>
+             				</div>
+             			</div>
+             		</button>
+             	</div>
+             	<div class="row no-padding-top" style="padding-left:39px;padding-right:39px">
+             		<button class="button button-block google-login box-shadow" ng-click="loginGoogle()">
+             			<div class="row row-no-padding">
+             				<div class="col-10 ion-social-googleplus-outline">
+             				</div>
+             				<div class="col-90">
+             					LOGIN WITH <b>GOOGLE</b>
+             				</div>
+             			</div>
+             		</button>
+             	</div>
+             	<center class="add">OR</center>
+              -->	<div class="row">
+             		<div class="col">
+             			<div class="col background box-shadow no-padding">
+             				<div class="list padding">
+             					<label class="item item-input item-floating-label">
+             						<input ng-model="data.username" class="input-login" type="text" placeholder="username">
+             					</label>
+             					<label class="item item-input item-floating-label">
+             						<input ng-model="data.password" class="input-login" type="password" placeholder="password">
+             					</label>
+             				</div>
+             				<div class="col text-center">
+             					<a class="add" ui-sref="app.forgot">Forgot Password</a>
+             				</div>
+             				<div class="col login no-padding-top">
+             					<button class="button button-block login-email box-shadow no-margin upper" ng-disabled="!data.username || !data.password" ng-click="login()">
+             						<span>Login</span>
+             					</button>
+             				</div>
+             			</div>
+             		</div>
+             	</div>
+             	<div class="col no-padding">
+             		<center><a class="add" href="">Not Member</a></center>
+             	</div>
+            
+	</ion-content>
+</ion-view>

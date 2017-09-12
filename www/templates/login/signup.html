@@ -1,0 +1,44 @@
+<ion-view style="" class=" " id="page2" title="Signup">
+    <ion-content class="has-header" padding="true" style="background: url(img/bg1.jpg) center; background-size: cover;">
+        <form name="signupForm" class="list" id="signup-form2">
+            <ion-list class=" " id="signup-list3">
+
+			   <div class="app-icon"></div>
+
+              <div class="item item-input item-floating-label">
+                <span style="color: #9F9F9F;"  class="input-label">Name</span>
+                <input style="color: #ffffff;" ng-model="user.name" type="text" placeholder="Full Name">
+
+
+
+                <span style="color: #9F9F9F;" class="input-label">Phone</span>
+                <input style="color: #ffffff;" ng-model="user.phone" type="tel" placeholder="Phone">
+
+
+
+                  <span style="color: #9F9F9F;" class="input-label">Email</span>
+                  <input style="color: #ffffff;" ng-model="user.email" type="email" placeholder="Email">
+
+
+
+                  <span style="color: #9F9F9F;" class="input-label">Password</span>
+                  <input style="color: #ffffff;" ng-model="user.password" type="password" placeholder="Password">
+
+             </div>
+
+            </ion-list>
+
+            <div style="width: 279px; height: 35px;" class="spacer"></div>
+          <center>  <button ng-click="signupEmail(signupForm,user)" class="waves-effect waves-light waves-ripple card button button-calm icon-left ion-ios-email-outline" style="font-color:white;border-radius:0px 0px 0px 0px;" id="signup-button3">
+            <i style="color:calm;font-weight:bold;font-size:15px">SIGNUP NOW</i>
+            </button>
+            <div style="height: 20px;" class="spacer"></div>
+            <i style="color:white;font-weight:bold;font-size:15px">Already have an account?</i>
+            <span class="waves-effect waves-light waves-ripple card button icon ion-arrow-left-c" ui-sref="login">
+            </span>
+          </center>
+
+
+        </form>
+    </ion-content>
+</ion-view>

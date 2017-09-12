@@ -1,0 +1,97 @@
+<ion-view id="page9" view-title="{{singleRecipe.name}}">
+  <ion-nav-buttons side="right">
+    <!-- #3.  $root.extras -->
+    <!-- #4.  get_total() -->
+    <button ui-sref="myCart" ng-if="$root.extras" class="waves-effect button button-icon button-clear ion-ios-box">
+      {{get_total()}}
+    </button>
+  </ion-nav-buttons>
+    <ion-content style="background: #e9ecee" id="product-detail-content">
+      <ion-refresher
+         pulling-text="Pull to refresh..."
+         on-refresh="doRefresh()">
+       </ion-refresher>
+        <ion-content class="card">
+            <!--product tabs section-->
+
+                <!--product tab detail section--><div label="Detail">
+
+                    <div id="product-detail-tab-detail" padding="true">
+                        <div class="toolbar-image-cover product animated fadeIn" style="background-image: url('{{singleRecipe.image}}');background-size: cover;position:fix;" style="background: #e9ecee">
+                        </div>
+
+
+
+                        <div class="detail-form">
+                            <div class="header">
+                                <h12>{{singleRecipe.name}}</h12>
+
+
+
+                            </div>
+                            <!--product tab detail price section-->
+
+                            <div class="product-detail-price">
+                                <div class="left">
+    <span
+                                        class="font-hot-sale">₱{{singleRecipe.price}} </span>
+                                </div>
+                                <div class="right">
+                                    <div class="addto">
+ <a  ng-click="addToCart(singleRecipe)"> <button class="button button-calm waves-effect waves-light">Add to Cart</button></a>
+
+                                </div>
+                                    </div>
+                            </div><!--end product tab detail price section-->
+
+
+
+                            <!--product tab detail review section-->
+                     <p> {{singleRecipe.description}}</p>
+                        <div class="product-detail-shipping row">
+                                <div class="col-40">
+
+            <p><i class="fa fa-clock-o" aria-hidden="true"></i> : {{singleRecipe.shippingtime}}</p>
+            <p><i class="icon icon-truck" aria-hidden="true"></i> : {{singleRecipe.shippingtime1}}</p>
+
+
+                                </div>
+                                <div class="col-60">
+
+                                             <p><i class="icon ion-cash" aria-hidden="true"></i> : {{singleRecipe.paymethod1}}</p>
+                                             <p><i class="icon ion-cash" aria-hidden="true"></i> : {{singleRecipe.paymethod2}}</p>
+                                             <p><i class="icon ion-cash" aria-hidden="true"></i> : {{singleRecipe.paymethod3}}</p>
+
+                                             <div class="list">
+
+         </div>
+                                </div>
+                            </div>
+
+                            <!--end product tab detail review section-->
+
+                            <!--product tab detail shipping section-->
+
+                        </div>
+                    </div>
+            </div>
+                <!--end product tab detail section-->
+
+                <!--product tab product section-->
+
+        </div>
+
+    </ion-content>
+    <!--end product detail section-->
+
+    <!--loading progress-->
+    <div id="product-detail-loading-progress" class="loading-progress fade-in">
+        <ion-spinner ng-if="!isAndroid" class="progress-circular" icon="ripple"></ion-spinner>
+    </div> <!--end loading progress-->
+
+    <!--canvas for save image to local devise-->
+    <canvas id="imgCanvas" class="display-none"></canvas>
+
+
+
+</ion-view>

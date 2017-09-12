@@ -12,10 +12,10 @@ Take the name after `ionic-starter-`, and that is the name of the template to be
 
 ```bash
 $ sudo npm install -g ionic cordova
-$ ionic start myApp blank
+$ ionic start app blank
 ```
 
-Then, to run it, cd into `myApp` and run:
+Then, to run it, cd into `app` and run:
 
 ```bash
 $ ionic platform add ios

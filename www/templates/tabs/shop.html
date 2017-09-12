@@ -1,0 +1,56 @@
+<ion-view style="has-header" class="categories-view" id="page27" title="Regions and Categories">
+  <ion-nav-buttons side="right">
+    <!-- #3.  $root.extras -->
+    <!-- #4.  get_total() -->
+    <button ui-sref="myCart" ng-if="$root.extras" class="waves-effect button button-icon button-clear ion-ios-box">
+      {{get_total()}}
+    </button>
+
+  </ion-nav-buttons>
+<!-- CONTENT -->
+
+    <ion-content id="shop" style="background: #e9ecee">
+
+      <ion-refresher
+         pulling-text="Pull to refresh..."
+         on-refresh="doRefresh()">
+       </ion-refresher>
+
+<div class="row categories-list animated fadeInUp">
+  <div ng-repeat="item in cats" class="col col-50">
+    <a class="category" ui-sref="categories({id: item.id})">
+      <pre-img ratio="" helper-class="">
+
+         <img class="category-image card" ng-cache ng-src="{{item.image}}" spinner-on-load>
+
+      </pre-img>
+      <div class="category-bg"></div>
+      <span class="category-title">{{item.name}}</span>
+    </a>
+  </div>
+</div>
+<div class="" style="height:50px;background: #e9ecee"></div>
+
+</ion-content>
+<!-- FOOTER -->
+<div class="bar bar-footer" style="height:50px;">
+  <div class="tabs tabs-icon-top" style="height:60px;">
+    <a class="tab-item" style="height:60px;" ui-sref="menu">
+      <i class="icon waves-effect icon-home"  style="font-size:35px;font-weight:700;color:#5d2f8d;"></i>
+      <i class="waves-effect" style="font-size:15px;font-weight:700;color:#5d2f8d;">Home</i>
+    </a>
+    <a class="tab-item active" style="height:60px;" ui-sref="shop">
+      <i class="icon waves-effect icon-shop" style="font-size:35px;font-weight:700;color:#5d2f8d;"></i>
+      <i class="waves-effect" style="font-size:15px;font-weight:700;color:#5d2f8d;">Balikbayan</i>
+    </a>
+    <a class="tab-item" style="height:60px;" ui-sref="helpdesk">
+      <i class="icon waves-effect icon-comment-discussion" style="font-size:35px;font-weight:700;color:#5d2f8d;"></i>
+      <i class="waves-effect" style="font-size:15px;font-weight:700;color:#5d2f8d;">HelpDesk</i>
+    </a>
+    <a class="tab-item" style="height:60px;" ui-sref="settings">
+      <i class="icon waves-effect ion-ios-contact" style="font-size:35px;font-weight:700;color:#5d2f8d;"></i>
+      <i class="waves-effect" style="font-size:15px;font-weight:700;color:#5d2f8d;">My Account</i>
+    </a>
+  </div>
+</div>
+</ion-view>

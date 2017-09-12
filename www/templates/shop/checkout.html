@@ -1,0 +1,79 @@
+<ion-view title="Checkout"  id="page10" >
+  <ion-content padding="true" style="background: #e9ecee" class="has-header">
+    <ion-refresher
+       pulling-text="Pull to refresh..."
+       on-refresh="doRefresh()">
+     </ion-refresher>
+
+    <form name="checkoutForm" class="list " ng-submit="pay(address_choice,pay_choice,phone)" >
+
+      <!--Address Header-->
+      <label ng-click="addManipulation()" class="waves-effect item item-input item ic-selected" >
+        <a class="icon icon-right ion-ios-location" style="margin-right: 10px;" ></a>
+        Add Address
+        <i  class="icon icon-right ion-android-add-circle" style="font-size: larger ;margin-left: 10px;"></i>
+      </label>
+
+      <!-- Address -->
+      <div class"card">
+        <br/>
+        <div class="button-icon ion-information-circled positive">
+          Select your recipient's address. Make sure your address is also added.
+      </div>
+      </div>
+
+      <ion-list  ng-repeat="item in addresses">
+          <ion-radio name="addr_group" ng-value="item.address" ng-model="$parent.address_choice">
+            <a class="icon icon-right ion-ios-location"></a>
+            {{item.nickname}} <br/>
+            {{item.pin}} <br/>
+            {{item.address}} <br/>
+            Phone : {{item.phone}}
+          </ion-radio>
+
+      </ion-list>
+
+           <ion-list ng-repeat="user in usersss">
+
+               phone: {{user}}
+        </ion-list>
+
+
+
+      <!-- Payment Options -->
+      <div class"card">
+        <br/>
+        <div class="button-icon ion-information-circled positive">
+          Payment options:
+      </div>
+      </div>
+
+      <ion-list ng-repeat="item in payments">
+          <ion-radio name="pay_group" ng-value="item.name" ng-model="$parent.pay_choice" > {{item.name}} </ion-radio>
+      </ion-list>
+   <br/><br/>
+      <button type="submit" class="waves-effect button button-calm button-stretch icon-right ion-android-arrow-forward">
+        <h5 style="color:white">Submit</h5>
+      </button>
+
+
+
+         <br> <br/>
+         <label> PLEASE READ: </label><br/>
+    <div>
+          1. <b style="color: orange">Queue</b> (waiting). <br />
+          2. <b style="color: green">Confirmed</b> (processed). <br />
+          3. <b style="color: red">Delivered</b> (claimed/receipt).<br /><br />
+
+             Feel Free to message us at <b style="color: blue">support@smart.ofwremit.us</b><br />
+       <br />
+      Smart OFW Remit (Inri Int'l Pte Ltd) - 2017 <br /> All rights reserved |
+      MAS License | BSP License | AMLC Compliance
+    </div>
+
+    </form>
+
+  </ion-content>
+
+
+</ion-view>

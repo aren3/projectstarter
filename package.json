@@ -1,13 +1,69 @@
 {
-  "name": "OFWRemit",
-  "version": "0.0.1",
-  "description": "An Ionic project",
+  "name": "OFW Remit",
+  "version": "1.1.2",
+  "description": "The leading remittance and shopping app for OFW's to send to your loved ones",
   "devDependencies": {
-    "@ionic/cli-plugin-gulp": "1.0.2",
-    "@ionic/cli-plugin-ionic1": "2.0.1",
+    "@ionic/cli-plugin-cordova": "1.6.2",
+    "@ionic/cli-plugin-gulp": "1.1.1",
+    "@ionic/cli-plugin-ionic1": "2.1.1",
     "gulp": "^3.5.6",
     "gulp-clean-css": "^3.7.0",
     "gulp-rename": "^1.2.0",
-    "gulp-sass": "^3.1.0"
+    "gulp-sass": "^3.1.0",
+    "ionic": "3.9.2"
+  },
+  "dependencies": {
+    "@angular2-material/button": "^2.0.0-alpha.8-3",
+    "@angular2-material/card": "^2.0.0-alpha.8-3",
+    "@angular2-material/core": "^2.0.0-alpha.8-3",
+    "@angular2-material/icon": "^2.0.0-alpha.8-3",
+    "@ionic/cloud": "^0.16.0",
+    "bluebird": "^3.5.0",
+    "cordova-android": "^6.2.3",
+    "cordova-ios": "^4.4.0",
+    "cordova-plugin-canvas2image": "git+https://github.com/devgeeks/Canvas2ImagePlugin.git",
+    "cordova-plugin-cocoapod-support": "^1.3.0",
+    "cordova-plugin-device": "^1.1.4",
+    "cordova-plugin-facebook4": "~1.9.1",
+    "cordova-plugin-fcm-plus": "git+https://github.com/guyromb/cordova-plugin-fcm-plus.git",
+    "cordova-plugin-inappbrowser": "^1.7.1",
+    "cordova-plugin-network-information": "^1.3.3",
+    "cordova-plugin-splashscreen": "^4.0.3",
+    "cordova-plugin-statusbar": "^2.2.1",
+    "cordova-plugin-whitelist": "^1.3.1",
+    "cordova-plugin-x-socialsharing": "git+https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git",
+    "cordova-sqlite-storage": "~0.7.14",
+    "cordova-universal-links-plugin": "^1.2.1",
+    "es6-promise-plugin": "^4.1.0",
+    "firebase": "^4.1.5",
+    "hammerjs": "^2.0.8",
+    "ionic-lock-screen": "^1.0.0",
+    "ionic-plugin-keyboard": "^2.2.1",
+    "org.devgeeks.Canvas2ImagePlugin": "https://github.com/devgeeks/Canvas2ImagePlugin.git",
+    "phonegap-plugin-push": "^1.10.5"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-whitelist": {},
+      "ionic-plugin-keyboard": {},
+      "cordova-plugin-inappbrowser": {},
+      "cordova-universal-links-plugin": {},
+      "cordova-plugin-network-information": {},
+      "cordova-plugin-x-socialsharing": {},
+      "org.devgeeks.Canvas2ImagePlugin": {},
+      "cordova-plugin-cocoapod-support": {},
+      "phonegap-plugin-push": {},
+      "cordova-plugin-facebook4": {
+        "APP_ID": "1599354483448950",
+        "APP_NAME": "Smart Remit (Inri-Int'l Pte Ltd)"
+      },
+      "cordova-sqlite-storage": {}
+    },
+    "platforms": [
+      "android"
+    ]
   }
 }

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1098891583020",
+    "firebase_url": "https://ofwremit.firebaseio.com",
+    "project_id": "ofwremit",
+    "storage_bucket": "ofwremit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1098891583020:android:810167434d6f8f1c",
+        "android_client_info": {
+          "package_name": "com.ofw.remit.ph"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1098891583020-c2cql87o4s3ot3kbmdpou572btb15ba6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ofw.remit.ph",
+            "certificate_hash": "f58309f89bdd349989b9eabac7da8b77571bd2ed"
+          }
+        },
+        {
+          "client_id": "1098891583020-npcu6io1rdkpcfc3djm985p9ac2iduhi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpwg9-RJq8SsxpM9mtQGlot5ePb6zIuY8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1098891583020-npcu6io1rdkpcfc3djm985p9ac2iduhi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

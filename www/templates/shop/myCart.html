@@ -1,0 +1,48 @@
+<ion-view style="" class="has-header" id="page6" title="My Box">
+  <ion-nav-buttons side="right">
+   <!-- #3.  $root.extras -->
+   <!-- #4.  get_total() -->
+   <button ui-sref="myCart" ng-if="$root.extras" class="waves-effect button button-icon button-clear ion-ios-box">
+     {{get_total()}}
+   </button>
+ </ion-nav-buttons>
+
+<!-- ION CONTENT -->
+    <ion-content class="has-header" padding="true" style="background: #e9ecee">
+
+
+     <div class="list">
+<div ng-repeat="item in cart">
+    <a class="item item-thumbnail-left">
+      <img src="{{item.item_image}}">
+      {{item.item_name}}
+      <p>Poduct Qty {{item.item_qty}}</p>
+      <p>Poduct Price ₱{{item.item_price}}</p>
+        <div class="button-bar" style="box-shadow: none;">
+              <button class="waves-effect waves-teal button button-stable button-large ion-ios-minus-outline" ng-click="dec(item.$id)"></button>
+              <button class="waves-effect waves-teal button button-stable button-large button-calm">{{item.item_qty}}</button>
+              <button class="waves-effect waves-teal button button-stable button-large ion-ios-plus-outline" ng-click="inc(item.$id)"></button>
+
+            </div>
+            <button ng-click="removeFromCart(item.$id)" class="waves-effect waves-light waves-ripple button button-assertive ion-ios-trash-outline" ></button>
+          </a>
+      </div>
+      </div>
+
+    <div>
+       <div class="list card">
+        <a class="item item-icon-left">
+          <i class="icon ion-ios-box-outline"></i>
+          <p>Qty {{get_qty()}}  Total =
+                <strong>₱{{total_amount}}</strong>
+              </p>
+        </a>
+</div>
+</div>
+
+  <div class="" style="height:30px;background: #e9ecee"></div>
+  <button ng-click="checkout()" class="waves-effect waves-light waves-ripple button button-calm button-block ">Checkout</button>
+
+
+          </ion-content>
+      </ion-view>

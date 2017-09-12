@@ -1,0 +1,59 @@
+<ion-view style="" class=" " id="page7" title="Orders">
+    <ion-content class="has-header" style="background: #e9ecee" padding="true">
+
+
+      <p class="button button-calm waves-effect waves-light">
+         Queued
+      </p>
+      <p class="button button-calm waves-effect waves-light">
+         Confirmed
+      </p>
+      <p class="button button-calm waves-effect waves-light">
+         Delivered
+      </p>
+
+ <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>
+        <style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #5d2e8d;
+    color: white;
+}
+</style>
+        <div style="overflow-x:auto;">
+     <table>
+  <thead>
+    <tr>
+      <th width="50">Qty</th>
+      <th width="300">Product Name</th>
+      <th width="150">Status</th>
+      <th width="250">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in orders" class="animated fadeInUp">
+      <td>{{item.item_qty}}</td>
+      <td>{{item.product_name}}</td>
+      <td>{{item.status}}</td>
+      <td>₱{{item.product_price}}x{{item.item_qty}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+    </ion-content>
+</ion-view>
