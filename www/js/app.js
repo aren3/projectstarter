@@ -111,7 +111,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
   		}
   	}
 
-    ngFB.init({appId: '1599354483448950', tokenStore: window.localStorage});
+    ngFB.init({appId: '', tokenStore: window.localStorage});
 
 });
 
